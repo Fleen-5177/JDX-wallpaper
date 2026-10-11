@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>JDX-wallpaper by Fleen5177</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="scene">
+        <div class="image-wrap"><img id="background" src="wallpaper/ChaserJZX100_2.jpg" alt=""></div>
+        <div class="vignette"></div>
+        <div class="mist mist-back"></div>
+        <div class="mist mist-front"></div>
+        <canvas id="snow"></canvas>
+        <div class="headlight-glow"></div>
+        <div class="grain"></div>
+
+        <button id="settings-toggle" class="settings-toggle" type="button" title="Открыть панель" aria-label="Открыть панель">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.4 13a7.7 7.7 0 0 0 0-2l2-1.5-2-3.4-2.4 1a7.8 7.8 0 0 0-1.7-1L15 3.5h-4L10.6 6a7.8 7.8 0 0 0-1.7 1l-2.4-1-2 3.4 2 1.5a7.7 7.7 0 0 0 0 2l-2 1.5 2 3.4 2.4-1a7.8 7.8 0 0 0 1.7 1l.4 2.5h4l.4-2.5a7.8 7.8 0 0 0 1.7-1l2.4 1 2-3.4zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+        </button>
+
+        <aside id="settings" class="settings-panel" aria-label="Панель JDX-wallpaper">
+            <header class="titlebar">
+                <div class="app-icon">❄</div>
+                <div class="title-copy"><div class="app-title">JDX-wallpaper</div><div class="app-subtitle">Обои и эффекты</div></div>
+                <button id="close-settings" class="icon-button" type="button" aria-label="Закрыть">✕</button>
+            </header>
+            <nav class="tabs" aria-label="Разделы">
+                <button class="tab active" type="button" data-tab="gallery" aria-selected="true">Галерея</button>
+                <button class="tab" type="button" data-tab="settings" aria-selected="false">Настройки</button>
+            </nav>
+
+            <section id="gallery-view" class="tab-view">
+                <div class="section-heading"><span class="section-title">КОЛЛЕКЦИЯ</span><span id="gallery-count" class="subtle-label"></span></div>
+                <div id="gallery-grid" class="gallery-grid"></div>
+                <p class="gallery-note">ver 1.0 | wallpaper by @JDXchannel</p>
+            </section>
+
+            <section id="settings-view" class="tab-view" hidden>
+                <div class="section-title">СНЕГОПАД</div>
+                <label class="setting"><span class="setting-head"><span>Интенсивность снега</span><output id="density-value"></output></span><input id="density" type="range" min="40" max="650" step="10"></label>
+                <label class="setting"><span class="setting-head"><span>Размер снежинок</span><output id="size-value"></output></span><input id="size" type="range" min="1" max="8" step="0.5"></label>
+                <label class="setting"><span class="setting-head"><span>Прозрачность</span><output id="opacity-value"></output></span><input id="opacity" type="range" min="10" max="85" step="5"></label>
+
+                <div class="section-title section-spaced">ДВИЖЕНИЕ</div>
+                <label class="setting"><span class="setting-head"><span>Скорость метели</span><output id="speed-value"></output></span><input id="speed" type="range" min="0.3" max="5" step="0.1"></label>
+                <label class="setting"><span class="setting-head"><span>Ветер · справа налево</span><output id="wind-value"></output></span><input id="wind" type="range" min="0" max="5" step="0.1"></label>
+                <label class="setting"><span class="setting-head"><span>Параллакс</span><output id="parallax-value"></output></span><input id="parallax" type="range" min="0" max="100" step="1"><span class="hint">0 — выключен · 1–100 — от 1,5× до 4×</span></label>
+
+                <div class="section-title section-spaced">АТМОСФЕРА</div>
+                <label class="toggle-row"><span><b>Движущийся туман</b><small>Мягкая дымка между слоями</small></span><input id="mist" type="checkbox"><span class="switch"></span></label>
+                <label class="toggle-row"><span><b>Пульсация свечения</b><small>Лёгкое изменение яркости</small></span><input id="glow" type="checkbox"><span class="switch"></span></label>
+                <footer class="panel-footer"><button id="reset" class="secondary-button" type="button">Сбросить</button><span>ver 1.0 | Fleen5177</span></footer>
+            </section>
+        </aside>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
